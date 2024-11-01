@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'ru.netology.yandexmapmarkers'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "ru.netology.yandexmapmarkers"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField "String", "MAPS_API_KEY", "\"${mapsApiKey}\""
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures.viewBinding = true  //++
+    buildFeatures.buildConfig = true
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+
+dependencies {
+
+    def core_version = "1.9.0"
+    def appcompat_version = "1.5.1"
+    def mdc_version = "1.7.0"
+    def constraint_layout_version = "2.1.4"
+    def recyclerview_version = "1.2.1"
+    def activity_version = "1.6.1"
+    def yandex_maps_mobile_version = "4.6.1-lite"
+
+    implementation "androidx.core:core-ktx:$core_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.activity:activity-ktx:$activity_version"
+    implementation "com.google.android.material:material:$mdc_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    implementation "com.yandex.android:maps.mobile:$yandex_maps_mobile_version"
+}
