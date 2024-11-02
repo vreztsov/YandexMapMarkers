@@ -2,4 +2,10 @@
 <resources>
     <string name="app_name">YandexMapMarkers</string>
     <string name="goToMap">Карта</string>
+    <string name="add">Добавить</string>
+    <string name="edit">Редактировать</string>
+    <string name="remove">Удалить</string>
+    <string name="title_point">Название точки</string>
+    <string name="point_description">Описание точки</string>
+    <string name="points_list">Закладки</string>
 </resources>
