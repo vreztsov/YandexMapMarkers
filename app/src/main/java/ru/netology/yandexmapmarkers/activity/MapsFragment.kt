@@ -73,11 +73,9 @@ class MapsFragment : Fragment() {
     }
 
     private fun zoom(delta: Float) {
-        val position = map.cameraPosition
-        with(position) {
-            val localZoomMap = zoom + delta
-                map.move(
-                CameraPosition(target, localZoomMap, azimuth, tilt),
+        with(map.cameraPosition) {
+            map.move(
+                CameraPosition(target, zoom + delta, azimuth, tilt),
                 Animation(com.yandex.mapkit.Animation.Type.SMOOTH, 0.5F),
                 null
             )
