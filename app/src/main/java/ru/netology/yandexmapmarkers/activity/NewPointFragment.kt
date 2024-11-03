@@ -14,12 +14,12 @@ import ru.netology.yandexmapmarkers.databinding.FragmentNewPointBinding
 import ru.netology.yandexmapmarkers.util.MapUtils.Companion.idPoint
 import ru.netology.yandexmapmarkers.util.MapUtils.Companion.latitude
 import ru.netology.yandexmapmarkers.util.MapUtils.Companion.longitude
-//import ru.netology.yandexmapmarkers.viewmodel.PointViewModel
+import ru.netology.yandexmapmarkers.viewmodel.PointViewModel
 
 @AndroidEntryPoint
 class NewPointFragment : Fragment() {
     private lateinit var binding: FragmentNewPointBinding
-//    private val viewModel: PointViewModel by activityViewModels()
+    private val viewModel: PointViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,18 +31,18 @@ class NewPointFragment : Fragment() {
         binding.coordinate.text = coordinate
         binding.sendPoint.setOnClickListener {
             if (!binding.inputEditTitle.text.isNullOrEmpty()) {
-//                arguments?.idPoint?.let {
-//                    with(requireArguments()) {
-//                        viewModel.savePoint(
-//                            PointMap(
-//                                idPoint, latitude, longitude,
-//                                binding.inputEditTitle.text.toString(),
-//                                binding.inputEditDescription.text.toString()
-//                            )
-//                        )
-//
-//                    }
-//                }
+                arguments?.idPoint?.let {
+                    with(requireArguments()) {
+                        viewModel.savePoint(
+                            PointMap(
+                                idPoint, latitude, longitude,
+                                binding.inputEditTitle.text.toString(),
+                                binding.inputEditDescription.text.toString()
+                            )
+                        )
+
+                    }
+                }
                 findNavController().navigate(R.id.action_newPointFragment_to_pointsListFragment)
             }
         }
