@@ -72,14 +72,6 @@ class MapsFragment : Fragment() {
         return binding.root
     }
 
-//    override fun onSaveInstanceState(outState: Bundle) {
-//        with(map.cameraPosition) {
-//            outState.latitude = target.latitude
-//            outState.longitude = target.longitude
-//            outState.zoom = zoom
-//        }
-//    }
-
     private fun zoom(delta: Float) {
         val position = map.cameraPosition
         with(position) {
