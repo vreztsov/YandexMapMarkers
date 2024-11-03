@@ -5,5 +5,5 @@ data class PointMap(
     val latitude: Double,
     val longitude: Double,
     val title: String,
-    val description: String,
+    val description: String
 )

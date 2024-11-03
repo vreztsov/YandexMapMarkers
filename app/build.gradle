@@ -49,7 +49,7 @@ dependencies {
     def constraint_layout_version = "2.1.4"
     def recyclerview_version = "1.3.2"
     def activity_version = "1.9.3"
-    def yandex_maps_mobile_version = "4.6.1-lite"
+    def yandex_maps_mobile_version = "4.6.1-full"
     def nav_version = "2.8.3"
     def room_version = "2.6.1"
     def lifecycle_version = "2.8.6"

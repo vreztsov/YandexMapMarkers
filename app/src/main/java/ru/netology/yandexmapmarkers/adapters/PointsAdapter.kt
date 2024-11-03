@@ -59,11 +59,11 @@ class PointViewHolder(
             point.setOnClickListener {
                 onInteractionListener.onMove(pointMap)
             }
-            remove.setOnLongClickListener {
+            remove.setOnClickListener {
                 onInteractionListener.onRemove(pointMap)
                 true
             }
-            edit.setOnLongClickListener {
+            edit.setOnClickListener {
                 onInteractionListener.onEdit(pointMap)
                 true
             }
